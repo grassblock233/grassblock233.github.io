@@ -1,0 +1,114 @@
+---
+import Menu from "../components/NavbarMenu.astro";
+import ThemeButton from "../widget/ThemeButton.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<navbar
+  class="navbar fixed px-2 w-full transform transition-all duration-500 ease-in-out text-center z-50 backdrop-blur-md bg-base-100/85 shadow-lg md:hidden"
+  id="navbar"
+>
+  <div class="navbar-start">
+    <details class="dropdown" id="dropdown">
+      <summary
+        tabindex="0"
+        role="button"
+        class="btn btn-ghost"
+        id="content"
+        title="Content"
+      >
+        <svg
+          class="swap-off fill-current transform transition-transform duration-300"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 512 512"
+        >
+          <path
+            d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+          ></path>
+        </svg>
+      </summary>
+      <Menu />
+    </details>
+  </div>
+  <div class="navbar-center">
+    <a
+      class="btn btn-ghost text-xl hover:scale-105 transition-transform duration-300"
+      href="/"
+    >
+      {SITE_TITLE}
+    </a>
+  </div>
+  <div class="navbar-end">
+    <ThemeButton id="navbar-theme" className="w-auto" />
+  </div>
+</navbar>
+
+<script>
+  let lastScrollY = window.scrollY;
+  const navbar = document.getElementById("navbar");
+
+  const handleScroll = () => {
+    if (navbar) {
+      // Add smooth class transitions
+      if (window.scrollY > lastScrollY && window.scrollY > 50) {
+        navbar.classList.add("-translate-y-full", "duration-500");
+        navbar.classList.remove("translate-y-0");
+        const dropdown = document.getElementById("dropdown");
+        if (dropdown) {
+          dropdown.removeAttribute("open");
+        }
+      } else if (window.scrollY < lastScrollY) {
+        navbar.classList.remove("-translate-y-full");
+        navbar.classList.add("translate-y-0", "duration-300");
+      }
+
+      lastScrollY = window.scrollY;
+    }
+  };
+
+  // Throttle scroll event for better performance
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        handleScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // Click outside to close dropdown
+  document.addEventListener("click", (event) => {
+    const dropdown = document.getElementById("dropdown");
+    if (dropdown) {
+      const isClickInside = dropdown.contains(event.target as Node);
+      if (!isClickInside && dropdown.hasAttribute("open")) {
+        dropdown.removeAttribute("open");
+      }
+    }
+  });
+
+  // Touch events
+  document.addEventListener("touchmove", (event) => {
+    const dropdown = document.getElementById("dropdown");
+    if (dropdown?.hasAttribute("open")) {
+      dropdown.removeAttribute("open");
+    }
+  });
+
+  // Close dropdown on menu item click
+  const closeDropdownOnClick = (selector: string) => {
+    document.querySelectorAll(selector).forEach((item) => {
+      item.addEventListener("click", () => {
+        const dropdown = document.getElementById("dropdown");
+        dropdown?.removeAttribute("open");
+      });
+    });
+  };
+
+  closeDropdownOnClick("#dropdown > ul > li > a");
+  closeDropdownOnClick("#dropdown > ul > li > details > ul > li > a");
+</script>
