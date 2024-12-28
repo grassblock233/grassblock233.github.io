@@ -48,7 +48,6 @@ export const menuItems = [
     href: "/blog",
     svg: "material-symbols:book-2-outline-rounded",
     target: "_self",
-    /*
     subItems: [
       {
         id: "all",
@@ -72,7 +71,6 @@ export const menuItems = [
         target: "_self",
       }, // Life category
     ],
-    */
   }, // Blog page with sub-items
   {
     id: "project",
