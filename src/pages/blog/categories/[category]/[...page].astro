@@ -6,6 +6,8 @@ import BaseCard from "../../../../components/BaseCard.astro";
 import Pagination from "../../../../widget/Pagination.astro";
 import { getCollection } from "astro:content";
 import { t } from "i18next";
+import { options } from "marked";
+import { date } from "astro:schema";
 
 export async function getStaticPaths({ paginate }: { paginate: any }) {
   const all_posts = await getCollection("blog");
@@ -71,8 +73,8 @@ const totalPages = Math.ceil(page.total / page.size);
 const pageLinks = generatePageLinks(totalPages);
 ---
 
-<BaseLayout title="Category">
-  <BaseCard title="Category">
+<BaseLayout title={t("label.categoryPage")}>
+  <BaseCard title={t("label.categoryPage")}>
     <h1 id="h1">{`${t("label.categoryPage")} - ${params.category}`}</h1>
     <hr />
   </BaseCard>

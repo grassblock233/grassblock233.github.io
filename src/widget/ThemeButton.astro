@@ -71,7 +71,7 @@ const { id, className } = Astro.props;
       const handleToggleClick = () => {
         let storedTheme = localStorage.getItem("theme");
         const userPreferredTheme = window.matchMedia(
-          "(prefers-color-scheme: dark)",
+          "(prefers-color-scheme: light)",
         ).matches
           ? "light"
           : "dark";
