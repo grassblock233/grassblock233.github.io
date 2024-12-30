@@ -43,8 +43,8 @@ const { title, image } = Astro.props;
         const storedTheme =
           localStorage.getItem("theme") ||
           (window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "light"
-            : "dark");
+            ? "dark"
+            : "light");
         const theme =
           storedTheme === "light" ? DAISYUI_THEME.light : DAISYUI_THEME.dark;
 
