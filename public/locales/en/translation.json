@@ -14,5 +14,18 @@
     "share": "Share",
     "shareCard": "Share this article",
     "close": "Close"
+  },
+  "menu": {
+    "home": "Home",
+    "friend": "Friend Link",
+    "about": "About",
+    "project": "Project",
+    "blog": "Blog",
+    "language": "Language"
+  },
+  "submenu": {
+    "all": "All Blogs",
+    "notes": "notes",
+    "others": "others"
   }
 }

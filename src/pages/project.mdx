@@ -10,17 +10,16 @@ import Success from "../components/mdx/Success.astro";
 import Warning from "../components/mdx/Warning.astro";
 import TimeLine from "../components/mdx/TimeLine.astro";
 import LinkCard from "../components/mdx/LinkCard.astro";
+import { t } from "i18next";
 
-<BaseLayout title="Project">
-  <BaseCard title="Project">
-# Project
-
----
-
+<BaseLayout title={t("menu.project")}>
+  <BaseCard title={t("menu.project")}>
+    # {t("menu.project")}
   </BaseCard>
+
   <ProjectCard
     title="Frosti"
-    image="https://frosti.saroprock.com/view.png"
+    image="/image/project-preview/Frosti.png"
     desc="一个干净、优美、快速的博客模板！"
     url="https://github.com/EveSunMaple/Frosti"
     badge="Astro"
