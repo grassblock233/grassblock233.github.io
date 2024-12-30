@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { USER_AVATAR, menuItems, socialIcons } from "../consts";
 import { Icon } from "astro-icon/components";
 import type { MenuItem } from "../types";
+import { t } from "i18next";
 ---
 
 <div
@@ -34,7 +35,7 @@ import type { MenuItem } from "../types";
                   class="transition-transform duration-200 group-hover:scale-110"
                 />
                 <span class="hidden lg:inline ml-2 transition-transform duration-200 group-hover:translate-x-1">
-                  {item.text}
+                  {t(item.text)}
                 </span>
               </summary>
               <ul class="w-full bg-base-100 rounded-lg">
@@ -46,14 +47,14 @@ import type { MenuItem } from "../types";
                       id={`header-${subItem.id}`}
                       href={subItem.href}
                       target={subItem.target || "_self"}
-                      aria-label={subItem.text}
+                      aria-label={t(subItem.text)}
                     >
                       <Icon
                         name={subItem.svg}
                         class="transition-transform duration-200 group-hover:scale-110"
                       />
                       <span class="hidden lg:inline ml-2 transition-transform duration-200 group-hover:translate-x-1">
-                        {subItem.text}
+                        {t(subItem.text)}
                       </span>
                     </a>
                   </li>
@@ -68,14 +69,14 @@ import type { MenuItem } from "../types";
               title={item.id}
               href={item.href}
               target={item.target || "_self"}
-              aria-label={item.text}
+              aria-label={t(item.text)}
             >
               <Icon
                 name={item.svg}
                 class="transition-transform duration-200 group-hover:scale-110"
               />
               <span class="hidden lg:inline ml-2 transition-transform duration-200 group-hover:translate-x-1">
-                {item.text}
+                {t(item.text)}
               </span>
             </a>
           )}

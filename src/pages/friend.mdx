@@ -9,27 +9,20 @@ import Success from "../components/mdx/Success.astro";
 import Warning from "../components/mdx/Warning.astro";
 import TimeLine from "../components/mdx/TimeLine.astro";
 import LinkCard from "../components/mdx/LinkCard.astro";
+import { t } from "i18next";
 
-<BaseLayout title="Friend">
-  <BaseCard title="Friend">
-# Friend
-
----
-
+<BaseLayout title={t("menu.friend")}>
+  <BaseCard title={t("menu.friend")}>
+    # {t("menu.friend")}
+    
     <div class="grid grid-cols-2 gap-4">
       <LinkCard
         title="EveSunMaple"
-        desc="一位普通的高中学生"
-        url="https://www.saroprock.com"
-        img="https://www.saroprock.com/profile.webp"
-      />
-      <LinkCard
-        title="EveSunMaple"
-        desc="Author of Frosti Theme Template"
-        url="https://www.saroprock.com"
-        img="https://www.saroprock.com/profile.webp"
+        desc="这个博客模板的作者"
+        url="https://github.com/EveSunMaple"
+        img="/image/friend-link/SunMaple.webp"
+        target="_blank"
       />
     </div>
-
   </BaseCard>
 </BaseLayout>

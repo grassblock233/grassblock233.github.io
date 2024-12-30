@@ -26,9 +26,9 @@ import { Icon } from "astro-icon/components";
           </div>
         )
       }
-      <div class="flex-1 space-y-2">
-        <div class="flex items-center gap-2 flex-wrap">
-          <h2 class="card-title text-xl md:text-2xl">{title}</h2>
+      <div class="w-full flex-1 space-y-2">
+        <div class="flex items-center gap-2 flex-wrap break-all">
+          <h2 class="card-title text-xl md:text-2xl break-words">{title}</h2>
           {
             badge && (
               <div class="badge badge-secondary badge-lg font-medium">
@@ -38,7 +38,7 @@ import { Icon } from "astro-icon/components";
           }
         </div>
         <p class="text-base-content/80 line-clamp-3">{desc}</p>
-        <div class="card-actions justify-end">
+        <div class="card-actions justify-end break-words">
           <div
             class="flex items-center gap-1 text-primary hover:text-primary-focus transition-colors"
           >

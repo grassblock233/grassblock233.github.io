@@ -37,6 +37,7 @@
     "i18next": "^23.16.8",
     "i18next-fs-backend": "^2.6.0",
     "katex": "^0.16.18",
+    "locale-emoji": "^0.3.0",
     "marked": "^14.1.4",
     "mdast-util-to-string": "^4.0.0",
     "medium-zoom": "^1.1.0",

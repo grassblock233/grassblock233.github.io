@@ -14,5 +14,18 @@
     "share": "分享",
     "shareCard": "分享这篇博客",
     "close": "关闭"
+  },
+  "menu": {
+    "home": "主页",
+    "friend": "友链",
+    "about": "关于",
+    "project": "项目分享",
+    "blog": "文章",
+    "language": "语言"
+  },
+  "submenu": {
+    "all": "全部文章",
+    "notes": "笔记",
+    "others": "其它"
   }
 }

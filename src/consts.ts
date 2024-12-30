@@ -11,7 +11,7 @@ export const DATE_FORMAT = "ddd MMM DD YYYY";
 // User profile information
 export const USER_NAME = "GrassBlock233";
 export const USER_SITE = "https://grassblock233.github.io/";
-export const USER_AVATAR = "/profile.webp";
+export const USER_AVATAR = "/profile.jpg";
 
 // Server and transition settings
 export const SERVER_URL = "https://grassblock233.github.io/";
@@ -30,58 +30,58 @@ export const CODE_THEME = {
 export const menuItems = [
   {
     id: "home",
-    text: "主页",
+    text: "menu.home",
     href: "/",
     svg: "material-symbols:home-outline-rounded",
     target: "_self",
   }, // Home page
   {
     id: "about",
-    text: "关于",
+    text: "menu.about",
     href: "/about",
     svg: "material-symbols:info-outline-rounded",
     target: "_self",
   }, // About page
   {
     id: "blog",
-    text: "文章",
+    text: "menu.blog",
     href: "/blog",
     svg: "material-symbols:book-2-outline-rounded",
     target: "_self",
     subItems: [
       {
         id: "all",
-        text: "All blogs",
+        text: "submenu.all",
         href: "/blog",
         svg: "material-symbols:ink-pen-outline-rounded",
         target: "_self",
       }, // All blog
       {
-        id: "tech",
-        text: "Tech blogs",
-        href: "/blog/categories/tech",
+        id: "notes",
+        text: "submenu.notes",
+        href: "/blog/categories/notes",
         svg: "material-symbols:deployed-code-outline",
         target: "_self",
-      }, // Technology category
+      }, // Notes category
       {
-        id: "life",
-        text: "Life blogs",
-        href: "/blog/categories/life",
+        id: "others",
+        text: "submenu.others",
+        href: "/blog/categories/others",
         svg: "material-symbols:earthquake-rounded",
         target: "_self",
-      }, // Life category
+      }, // Others category
     ],
-  }, // Blog page with sub-items
+  },
   {
     id: "project",
-    text: "项目",
+    text: "menu.project",
     href: "/project",
     svg: "material-symbols:code-blocks-outline",
     target: "_self",
   }, // Projects page
   {
     id: "friend",
-    text: "友链",
+    text: "menu.friend",
     href: "/friend",
     svg: "material-symbols:supervisor-account-outline-rounded",
     target: "_self",
@@ -91,13 +91,13 @@ export const menuItems = [
 // Social media and contact icons
 export const socialIcons = [
   {
-    href: "https://github.com/EveSunMaple",
+    href: "https://github.com/grassblock233",
     ariaLabel: "Github",
     title: "Github",
     svg: "ri:github-line",
   },
   {
-    href: "https://space.bilibili.com/438392347",
+    href: "https://space.bilibili.com/419213014",
     ariaLabel: "BiliBili",
     title: "BiliBili",
     svg: "ri:bilibili-line",
