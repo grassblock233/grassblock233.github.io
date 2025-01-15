@@ -1,0 +1,61 @@
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BaseCard from "../components/BaseCard.astro";
+import Collapse from "../components/mdx/Collapse.astro";
+import Diff from "../components/mdx/Diff.astro";
+import Error from "../components/mdx/Error.astro";
+import Info from "../components/mdx/Info.astro";
+import Kbd from "../components/mdx/Kbd.astro";
+import Success from "../components/mdx/Success.astro";
+import Warning from "../components/mdx/Warning.astro";
+import TimeLine from "../components/mdx/TimeLine.astro";
+import LinkCard from "../components/mdx/LinkCard.astro";
+
+<BaseLayout title="主页">
+  <BaseCard title="主页">
+    <div class="flex">
+      <div class="p-3">
+          # 主页
+
+          这里是GrassBlock233的博客，欢迎👋
+      </div>
+    </div>
+  </BaseCard>
+
+  <BaseCard>
+    ## 一些介绍
+
+    这个博客主要是记录一些学习笔记，包括平常折腾，专业课学习，算法学习等等，共同进步:)
+
+    ## 网站目录
+    <div class="grid grid-cols-2 gap-4">
+      <LinkCard
+        title="笔记"
+        desc="各种笔记，记录新知"
+        url="/blog/categories/notes"
+        target="_self"
+        img="/image/index/book.svg"
+      />
+      <LinkCard
+        title="其它"
+        desc="其它一些杂七杂八的文章"
+        url="/blog/categories/others"
+        target="_self"
+        img="/image/index/book.svg"
+      />
+      <LinkCard
+        title="项目分享"
+        desc="分享Github上的项目"
+        url="/project"
+        target="_self"
+        img="/image/index/github.svg"
+      />
+      <LinkCard
+        title="友链"
+        desc="感谢为这个博客做出贡献的人"
+        url="/friend"
+        target="_self"
+        img="/image/index/link.svg"
+      />
+    </div>
+  </BaseCard>
+</BaseLayout>
